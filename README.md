@@ -29,7 +29,7 @@ Matlab, Pyhton and C++ Implementation of various algorithms of Machine Learning 
   3. Decsion Tree ( DecisionTreeMushroom.m )
   4. Mixture of Gaussians (MixtureOfGaussian.m)
   5. Naive Bayes ( NaiveBayes_Mushroom.m, NaiveBayes_NewsGroup.m)
-  6. 8. K Nearest Neighbour (KNN.m, KNN_Clasifier.py)
+  6. K Nearest Neighbour (KNN.m, KNN_Clasifier.py)
   
 - **Regression**
   1. Logistic Regression (LogisticRegression.m, tryNR.m)
