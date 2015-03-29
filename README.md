@@ -1,17 +1,17 @@
 # Statistical_Analysis_Code
-Matlab, Pyhton and C++ Implementation of various algorithms of Machine Learning and Data Mining.
-Some of the algorithms are:
 
-Clustering:
-  AgglomerativeClustering.m
-  KMeanClustering.m
-  KMeanFFP.m
-  KmeanFFP_PCA.m
-  Kmean_FFP_Fisher.m
-  SoftKMeans.m
-  SpehricalKMeans.m
-  KNN.m
-  GMM.cpp
+Matlab, Pyhton and C++ Implementation of various algorithms of Machine Learning and Data Mining.These are implemented as a requirment for my postgraduation courses (Cloud Computing,Machine Learning, SMAI). Some of the algorithms are:
+
+- **Clustering**
+  1. Agglomerative Clustering (AgglomerativeClustering.m)
+  2. K-Mean Clustering (KMeanClustering.m)
+  3. K-Mean with FFP (KMeanFFP.m)
+  4. K-mean FFP and PCA (KmeanFFP_PCA.m)
+  5. Kmean_FFP_Fisher (Kmean_FFP_Fisher.m.m)
+  6. Soft K-Means (SoftKMeans.m)
+  7. Spehrical K-Means (SpehricalKMeans.m)
+  8. K Nearest Neighbour (KNN.m)
+  9. Gaussian Mixture Models (GMM.cpp)
   
 Classification
   BaysianClassifier.m
