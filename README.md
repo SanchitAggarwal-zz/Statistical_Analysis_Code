@@ -21,7 +21,7 @@ Matlab, Pyhton and C++ Implementation of various algorithms of Machine Learning 
       - Single sample Relaxation (variable eta)
       - Batch Relaxation Learning (variable eta)
       - MSE using Pseudo Inverse
-      - MSE using LMS Procedure--->''')
+      - MSE using LMS Procedure
       - **Combinations for validation**
         - 1 vs. Rest
         - 1 vs. 1 with Majority voting
