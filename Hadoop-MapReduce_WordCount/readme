@@ -1,0 +1,73 @@
+Steps to install Hadoop single Node
+Prerequisites
+1. install openJDK 6 or sun java 6
+2. add a dedicated hadoop system user
+3. configure ssh access to manage the hadoop nodes
+4. disable ipv6
+
+Hadoop Installation
+1.download hadoop form apcache mirror
+2.update $HOME/.bashrc
+3.change the configuration settings of 
+	1.hadoop-env.sh
+	2.core-site.xml
+	3.marped-site.xml
+	4.hdfs-site.xml
+4.Format the HDFS file system
+5.start single node cluster
+
+6.write the code for mapper  and reducer
+test the mapper.py script
+
+$echo "my first my second my thisrd program"| /home/luminous/201207593/mapperx.py
+my	1
+first	1
+my	1
+second	1
+my	1
+thisrd	1
+program	1
+
+test the reducer.py script
+echo "my first my second my thisrd program"| /home/luminous/201207593/mapperx.py | sort -k1,1 |/home/luminous/201207593/reducer.py
+first	1
+my	3
+program	1
+second	1
+thisrd	1
+
+6.Run a MapReduce Job on Hadoop with above scripts
+
+$ /home/luminous/hadoop$ bin/hadoop jar contrib/streaming/hadoop-*streaming*.jar -file /home/hduser/mapperx.py -mapper /home/hduser/mapperx.py -file /home/hduser/reducer.py -reducer /home/hduser/reducer.py -input /user/hduser/TextFile/*.* -output /user/hduser/pyhtonfinal-output
+Warning: $HADOOP_HOME is deprecated.
+
+packageJobJar: [/home/hduser/mapperx.py, /home/hduser/reducer.py, /app/hadoop/tmp/hadoop-unjar7894133740434365419/] [] /tmp/streamjob1714804210654478686.jar tmpDir=null
+12/08/18 22:46:16 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+12/08/18 22:46:16 WARN snappy.LoadSnappy: Snappy native library not loaded
+12/08/18 22:46:16 INFO mapred.JobClient: Cleaning up the staging area hdfs://localhost:54310/app/hadoop/tmp/mapred/staging/hduser/.staging/job_201208182038_0003
+12/08/18 22:46:16 ERROR security.UserGroupInformation: PriviledgedActionException as:hduser cause:org.apache.hadoop.mapred.InvalidInputException: Input Pattern hdfs://localhost:54310/user/hduser/TextFile/*.* matches 0 files
+12/08/18 22:46:16 ERROR streaming.StreamJob: Error Launching job : Input Pattern hdfs://localhost:54310/user/hduser/TextFile/*.* matches 0 files
+Streaming Command Failed!
+hduser@luminous-To-be-filled-by-O-E-M:/home/luminous/hadoop$ 
+hduser@luminous-To-be-filled-by-O-E-M:/home/luminous/hadoop$ bin/hadoop jar contrib/streaming/hadoop-*streaming*.jar -file /home/hduser/mapperx.py -mapper /home/hduser/mapperx.py -file /home/hduser/reducer.py -reducer /home/hduser/reducer.py -input /home/hduser/TextFile/*.* -output /home/hduser/pyhtonfinal-output
+Warning: $HADOOP_HOME is deprecated.
+
+packageJobJar: [/home/hduser/mapperx.py, /home/hduser/reducer.py, /app/hadoop/tmp/hadoop-unjar1648561479441733266/] [] /tmp/streamjob8501809144828515273.jar tmpDir=null
+12/08/18 22:49:17 INFO util.NativeCodeLoader: Loaded the native-hadoop library
+12/08/18 22:49:17 WARN snappy.LoadSnappy: Snappy native library not loaded
+12/08/18 22:49:17 INFO mapred.FileInputFormat: Total input paths to process : 3
+12/08/18 22:49:17 INFO streaming.StreamJob: getLocalDirs(): [/app/hadoop/tmp/mapred/local]
+12/08/18 22:49:17 INFO streaming.StreamJob: Running job: job_201208182038_0004
+12/08/18 22:49:17 INFO streaming.StreamJob: To kill this job, run:
+12/08/18 22:49:17 INFO streaming.StreamJob: /home/luminous/hadoop/libexec/../bin/hadoop job  -Dmapred.job.tracker=localhost:54311 -kill job_201208182038_0004
+12/08/18 22:49:17 INFO streaming.StreamJob: Tracking URL: http://localhost:50030/jobdetails.jsp?jobid=job_201208182038_0004
+12/08/18 22:49:18 INFO streaming.StreamJob:  map 0%  reduce 0%
+12/08/18 22:49:32 INFO streaming.StreamJob:  map 67%  reduce 0%
+12/08/18 22:49:38 INFO streaming.StreamJob:  map 100%  reduce 0%
+12/08/18 22:49:41 INFO streaming.StreamJob:  map 100%  reduce 22%
+12/08/18 22:49:50 INFO streaming.StreamJob:  map 100%  reduce 100%
+12/08/18 22:49:56 INFO streaming.StreamJob: Job complete: job_201208182038_0004
+12/08/18 22:49:56 INFO streaming.StreamJob: Output: /home/hduser/pyhtonfinal-output
+
+
+
